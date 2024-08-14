@@ -13,7 +13,7 @@ fmtCommands["csharp"] = "clang-format -i"
 fmtCommands["racket"] = "raco fmt --width 80 --max-blank-lines 2 -i"
 fmtCommands["javascript"] = "prettier --write > /dev/null 2>&1"
 fmtCommands["rust"] = "rustfmt +nightly"
-fmtCommands["NIX"] = "alejandra -qq -"
+fmtCommands["nix"] = "alejandra -qq -"
 
 config.RegisterCommonOption("autofmt", "fmt-onsave", true)
 
