@@ -7,13 +7,13 @@ local micro = import("micro")
 
 local fmtCommands = {}
 fmtCommands["python"] = "yapf -i"
-fmtCommands["c"]      = "clang-format -i"
-fmtCommands["c++"]    = "clang-format -i"
+fmtCommands["c"] = "clang-format -i"
+fmtCommands["c++"] = "clang-format -i"
 fmtCommands["csharp"] = "clang-format -i"
 fmtCommands["racket"] = "raco fmt --width 80 --max-blank-lines 2 -i"
-fmtCommands["javascript"] = "prettier --write > /dev/null 2>&1"
+fmtCommands["javascript"] = "prettier --write > &>/dev/null"
 fmtCommands["rust"] = "rustfmt +nightly"
-fmtCommands["nix"] = "alejandra -qq -"
+fmtCommands["nix"] = "alejandra -qq"
 
 config.RegisterCommonOption("autofmt", "fmt-onsave", true)
 
