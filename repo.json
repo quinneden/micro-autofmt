@@ -1,14 +1,19 @@
-[{
-  "Name": "autofmt",
-  "Description": "plugin to run formatters on save",
-  "Tags": ["formatter"],
-  "Versions": [
-    {
-      "Version": "main",
-      "Url": "https://github.com/quinneden/micro-autofmt/archive/main.zip",
-      "Require": {
-        "micro": ">=2.0.8"
+[
+  {
+    "Name": "autofmt",
+    "Description": "plugin to run formatters on save",
+    "Tags": [
+      "formatter"
+    ],
+    "Website": "https://github.com/quinneden/micro-autofmt",
+    "Versions": [
+      {
+        "Version": "2.0.1",
+        "Url": "https://github.com/quinneden/micro-autofmt/archive/2.0.1.zip",
+        "Require": {
+          "micro": ">=2.0.8"
+        }
       }
-    }
-  ]
-}]
+    ]
+  }
+]

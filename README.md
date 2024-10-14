@@ -21,10 +21,11 @@
 | Racket   | [fmt](https://docs.racket-lang.org/fmt/index.html) |
 | JavaScript | [prettier](https://prettier.io/) |
 | Rust | [rustfmt nightly](https://github.com/rust-lang/rustfmt) |
+| Nix | [nixfmt-rfc-style](https://github.com/NixOS/nixfmt) |
 
 ## Credits
 
-This project is intended as a replacement for the now-dead [fmt-micro](https://github.com/sum01/fmt-micro). o7
+This project is intended as a replacement for the now-dead [fmt-micro](https://github.com/sum01/fmt-micro).
 
 --- 
 
