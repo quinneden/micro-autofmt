@@ -13,7 +13,7 @@ fmtCommands["csharp"] = "clang-format -i"
 fmtCommands["racket"] = "raco fmt --width 80 --max-blank-lines 2 -i"
 fmtCommands["javascript"] = "prettier --write --loglevel silent"
 fmtCommands["rust"] = "rustfmt +nightly"
-fmtCommands["nix"] = "/Users/quinn/workdir/nixfmt_shim"
+fmtCommands["nix"] = "nixfmt -q"
 
 config.RegisterCommonOption("autofmt", "fmt-onsave", true)
 
@@ -41,9 +41,12 @@ function fmtCmd(bp)
 end
 
 function doFmt(bp, fmtCmd)
-    local error = shell.RunCommand(fmtCmd .. " " .. bp.Buf.Path)
-    if error ~= nil then
-        micro.InfoBar():Error(error)
+    bp:Save()
+    local dirPath, _ = filepath.Split(bp.Buf.AbsPath)
+    local _, err = os.execute("cd \"" .. dirPath .. "\"; " .. fmtCmd .. " " .. bp.Buf.AbsPath)
+    if err ~= nil then
+        micro.InfoBar():Error(err)
+        return
     end
     bp.Buf:ReOpen()
 end
