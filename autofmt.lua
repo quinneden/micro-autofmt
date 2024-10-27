@@ -13,7 +13,7 @@ fmtCommands["csharp"] = "clang-format -i"
 fmtCommands["racket"] = "raco fmt --width 80 --max-blank-lines 2 -i"
 fmtCommands["javascript"] = "prettier --write --loglevel silent"
 fmtCommands["rust"] = "rustfmt +nightly"
-fmtCommands["nix"] = "/Users/quinn/workdir/nixfmt_shim"
+fmtCommands["nix"] = "bin/nixfmt_shim"
 
 config.RegisterCommonOption("autofmt", "fmt-onsave", true)
 

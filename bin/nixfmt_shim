@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if ! (type nixfmt &>/dev/null); then
   echo 'Error: command nixfmt not found!'
@@ -11,9 +11,12 @@ loc=$(grep -oE '[0-9]+:[0-9]+'<<<"${err[0]}")
 line=$(awk -F':' '{print $1}'<<<"$loc")
 col=$(awk -F':' '{print $2}'<<<"$loc")
 
-unexp=$(awk '{print $1, $2}'<<<"${err[@]:1}")
+err_str=$(printf '%s ' "${err[@]:1}")
 
-exp="${err[*]:3}"
+# unexp=$(awk '{print $1, $2}'<<<"${err[@]:1}")
+unexp="${err_str%%expecting*}"
+
+exp="$(grep -oe 'expecting.*$' <<< $err_str)"
 
 if ! nixfmt -cq "$@"; then
   echo -n "Error: line $line, col $col: $unexp; $exp." >&2
