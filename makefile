@@ -1,4 +1,5 @@
-prefix = ${HOME}/.config/micro/plug/autofmt
+# prefix = ${HOME}/.config/micro/plug/autofmt
+prefix = @prefix@
 
 install:
 	mkdir -p $(prefix)/{help,bin}
