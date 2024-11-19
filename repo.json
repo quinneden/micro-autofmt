@@ -8,7 +8,7 @@
     "Website": "https://github.com/quinneden/micro-autofmt",
     "Versions": [
       {
-        "Version": "HEAD",
+        "Version": "main",
         "Url": "https://github.com/quinneden/micro-autofmt/archive/refs/heads/main.zip",
         "Require": {
           "micro": ">=2.0.8"
