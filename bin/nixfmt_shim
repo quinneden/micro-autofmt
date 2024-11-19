@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-nixfmt_exec="$(dirname $0)/nixfmt"
+if ! (type nixfmt &>/dev/null); then
+  echo 'Error: command nixfmt not found!'
+  exit 1
+fi
 
-# if ! (type nixfmt &>/dev/null); then
-#   echo 'Error: command nixfmt not found!'
-#   exit 1
-# fi
-
-read -d'EOF' -ra err < <("$nixfmt_exec" "$@" 2>&1 | sed '2,4d')
+read -d'EOF' -ra err < <(nixfmt "$@" 2>&1 | sed '2,4d')
 
 loc=$(grep -oE '[0-9]+:[0-9]+'<<<"${err[0]}")
 line=$(awk -F':' '{print $1}'<<<"$loc")
@@ -17,11 +15,11 @@ err_str=$(printf '%s ' "${err[@]:1}")
 
 unexp="${err_str%%expecting*}"
 
-exp="$(grep -oe 'expecting.*$' <<< $err_str)"
+exp="$(grep -oe 'expecting.*$' <<< "$err_str")"
 
-if ! "$nixfmt_exec" -cq "$@"; then
+if ! nixfmt -cq "$@"; then
   echo -n "Error: line $line, col $col: $unexp; $exp." >&2
   exit 1
 else
-  "$nixfmt_exec" -qv "$@"
+  nixfmt -qv "$@"
 fi

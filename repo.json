@@ -9,7 +9,7 @@
     "Versions": [
       {
         "Version": "2.0.2",
-        "Url": "https://github.com/quinneden/micro-autofmt/archive/2.0.2.zip",
+        "Url": "https://github.com/quinneden/micro-autofmt/archive/refs/heads/main.zip",
         "Require": {
           "micro": ">=2.0.8"
         }

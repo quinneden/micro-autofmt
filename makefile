@@ -4,5 +4,4 @@ install:
 	cp repo.json ~/.config/micro/plug/micro-autofmt/repo.json
 	cp help/autofmt.md ~/.config/micro/plug/micro-autofmt/help/autofmt.md
 	cp bin/nixfmt_shim ~/.config/micro/plug/micro-autofmt/bin/nixfmt_shim
-	tar xf bin/nixfmt.tar.gz -C ~/.config/micro/plug/micro-autofmt/bin
 
