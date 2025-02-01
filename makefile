@@ -1,4 +1,4 @@
-prefix ?= ${HOME}/.config/micro/plug/autofmt
+prefix ?= ${HOME}/.config/micro/plug/autofmt-nix
 nixfmt_shim ?= bin/nixfmt_shim
 
 install:
