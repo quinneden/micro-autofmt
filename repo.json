@@ -1,6 +1,6 @@
 [
   {
-    "Name": "autofmt-nix",
+    "Name": "autofmt",
     "Description": "plugin to run formatters on save",
     "Tags": [
       "formatter",
