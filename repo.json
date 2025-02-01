@@ -3,7 +3,7 @@
     "Name": "autofmt-nix",
     "Description": "plugin to run formatters on save",
     "Tags": [
-      "formatter"
+      "formatter",
       "nix"
     ],
     "Website": "https://github.com/quinneden/micro-autofmt",
